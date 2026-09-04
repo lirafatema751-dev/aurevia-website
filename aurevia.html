@@ -145,31 +145,58 @@ Typical deliverables <br><ul type="square">
     <section id="contact"><h2>Contact information</h2>
      <h3>Start your Project</h3>
       <p>Tell us about your project and our team will get back to you.</p>
-      <form action="">
+      <form action="/submit" method="POST">
         <fieldset>
-         <legend>Client/Project details</legend>
+         <legend>Personal information</legend>
           <label for="name">Full Name:</label>
-          <input type="text" name="name" id="name" placeholder="Enter your full name" required> <br> <br>
+          <input type="text" name="name" id="name" placeholder="Enter your full name" required minlength="2">  <br> <br>
 
           <label for="email">Email Address:</label>
           <input type="email" name="email" id="email" placeholder="Enter your email" required><br> <br>
 
-          <label for="service">Service Needed:</label>
-          <select name="service" id="service">
-            <option value="">Select a service</option>
-            <option value="branding">Brand Identity</option>
-             <option value="uiux">UI/UX Design</option>
-              <option value="graphic">Graphic Design</option>
-               <option value="creative">Creative Direction</option>
-                <option value="packaging">Packaging Architecture</option>
-          </select><br><br>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"> <br> <br>
+        </fieldset>  
+        <fieldset> 
+            <legend>Project information</legend>
 
-          <label for="messages">Project Details:</label>
-          <textarea name="messages" id="messages" rows="6" placeholder="Tell us about your project..." required></textarea><br> <br>
+            <label for="service">Service Needed:</label>
+              <select name="service" id="service" required>
+                <option value="">Select a service</option>
+                <option value="branding">Brand Identity</option>
+                <option value="uiux">UI/UX Design</option>
+                  <option value="graphic">Graphic Design</option>
+                  <option value="creative">Creative Direction</option>
+                    <option value="packaging">Packaging Architecture</option>
+            </select><br><br>
+            <label for="budget">Budget:</label>
+            <input type="text" name="budget" id="budget"> <br> <br>
 
-          <button type="submit"> Send Inquiry</button>
+            <label for="messages">Project Details:</label>
+          
+            <textarea name="messages" id="messages" rows="6" placeholder="Tell us about your project..." required minlength="20" maxlength="500"></textarea>
+          </fieldset> <br> <br>
+          
+          <fieldset>
+            <legend>Contact preferenc</legend>
 
-        </fieldset>
+            <label >
+              <input type="radio" name="contact" value="email" required> Email
+            </label>
+            <label >
+              <input type="radio" name="contact" value="phone"> Phone
+            </label>
+          </fieldset> <br>
+          <fieldset>
+            <legend>Optional checkbox</legend>
+
+            <label >
+              <input type="checkbox" name="updates" value="yes"> I'd like to receive project updates.
+            </label>
+          </fieldset> <br>
+          <button type="submit"> Send Project Inquiry</button>
+
+        
       </form>
     
     </section>
